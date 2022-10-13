@@ -134,6 +134,9 @@
 		// Data entry schema:
 		{
 			"user_id": "string",
+			"full_name": "string",
+			"email_address": "string",
+			"order_status": "accepted" | "denied" | "processing_card",
 			"seats": [
 				{
 					"row": "number",
@@ -153,6 +156,7 @@
 			"user_id": "d5b7ce",
 			"full_name": "Seth Franklin",
 			"email_address": "sjfranklin@umass.edu",
+			"order_status": "accepted",
 			"seats": [
 				{
 					"row": 5,

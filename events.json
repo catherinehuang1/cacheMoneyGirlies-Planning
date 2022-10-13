@@ -1,0 +1,170 @@
+
+// EVENT: UserCreated
+
+// Data entry schema:
+{
+	"user_id": "string",
+	"full_name": "string",
+	"email_address": "string"
+}
+
+// Data entry example:
+{
+	"user_id": "d5b7ce",
+	"full_name": "Seth Franklin",
+	"email_address": "sjfranklin@umass.edu"
+}
+
+// EVENT: UserConfirmed
+
+// Data entry schema:
+{
+	"user_id": "string",
+	"full_name": "string",
+	"email_address": "string"
+}
+
+// Data entry example:
+{
+	"user_id": "d5b7ce",
+	"full_name": "Seth Franklin",
+	"email_address": "sjfranklin@umass.edu"
+}
+
+// EVENT: SeatsSelected
+
+// Data entry schema:
+{
+	"user_id": "string",
+	"seats": [
+		{
+			"row": "number",
+			"column": "number",
+		},...
+	]
+}
+
+// Data entry example:
+{
+	"user_id": "d5b7ce",
+	"seats": [
+		{
+			"row": 5,
+			"column": 3,
+		},
+		{
+			"row": 5,
+			"column": 4,
+		},
+		{
+			"row": 5,
+			"column": 5,
+		}
+	]
+}
+
+// EVENT: TimerExpired
+
+// Data entry schema:
+{
+	"user_id": "string"
+}
+
+// Data entry example:
+{
+	"user_id": "d5b7ce"
+}
+
+// EVENT: CardCreated
+
+// Data entry schema:
+{
+	"user_id": "user_id",
+	"card_number": "string",
+	"billing_address": "string",
+	"expiration_date": "string",
+	"cvv": "string"
+}
+
+// Data entry example:
+{
+	"user_id": "d5b7ce",
+	"card_number": "1234567890123456",
+	"billing_address": "181 Presidents Drive, Amherst MA, 01003",
+	"expiration_date": "01/01",
+	"cvv": "123"
+}
+
+// EVENT: CardAccepted
+
+// Data entry schema:
+{
+	"user_id": "string"
+}
+
+// Data entry example:
+{
+	"user_id": "d5b7ce"
+}
+
+// EVENT: CardDenied
+
+// Data entry schema:
+{
+	"user_id": "string"
+}
+
+// Data entry example:
+{
+	"user_id": "d5b7ce"
+}
+
+// EVENT: Order Confirmed
+
+// Data entry schema:
+{
+	"user_id": "string",
+	"full_name": "string",
+	"email_address": "string",
+	"order_status": "accepted" | "denied" | "processing_card",
+	"seats": [
+		{
+			"row": "number",
+			"column": "number",
+		},...
+	] | undefined,
+	"card_info": {
+		"card_number": "string",
+		"billing_address": "string",
+		"expiration_date": "string",
+		"cvv": "string"
+	} | undefined
+}
+
+// Data entry example:
+{
+	"user_id": "d5b7ce",
+	"full_name": "Seth Franklin",
+	"email_address": "sjfranklin@umass.edu",
+	"order_status": "accepted",
+	"seats": [
+		{
+			"row": 5,
+			"column": 3,
+		},
+		{
+			"row": 5,
+			"column": 4,
+		},
+		{
+			"row": 5,
+			"column": 5,
+		}
+	],
+	"card_info": {
+		"card_number": "1234567890123456",
+		"billing_address": "181 Presidents Drive, Amherst MA, 01003",
+		"expiration_date": "01/01",
+		"cvv": "123"
+	}
+}
