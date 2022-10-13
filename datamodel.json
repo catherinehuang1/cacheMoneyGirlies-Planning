@@ -31,14 +31,16 @@
 		{
 			"user_id": "string",
 			"full_name": "string",
-			"email": "string"
+			"email_address": "string",
+			"confirmed": "boolean"
 		}
 
 		// Data entry example:
 		{
 			"user_id": "d5b7ce",
 			"full_name": "Seth Franklin",
-			"email": "sjfranklin@umass.edu"
+			"email_address": "sjfranklin@umass.edu",
+			"confirmed": "false"
 		}
 
 // SERVICE: Seats
