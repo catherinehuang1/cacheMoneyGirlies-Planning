@@ -1,14 +1,14 @@
 
 // EVENT: UserCreated
 
-// Data entry schema:
+// Event body schema:
 {
 	"user_id": "string",
 	"full_name": "string",
 	"email_address": "string"
 }
 
-// Data entry example:
+// Event body example:
 {
 	"user_id": "d5b7ce",
 	"full_name": "Seth Franklin",
@@ -17,14 +17,14 @@
 
 // EVENT: UserConfirmed
 
-// Data entry schema:
+// Event body schema:
 {
 	"user_id": "string",
 	"full_name": "string",
 	"email_address": "string"
 }
 
-// Data entry example:
+// Event body example:
 {
 	"user_id": "d5b7ce",
 	"full_name": "Seth Franklin",
@@ -33,7 +33,7 @@
 
 // EVENT: SeatsSelected
 
-// Data entry schema:
+// Event body schema:
 {
 	"user_id": "string",
 	"seats": [
@@ -44,7 +44,7 @@
 	]
 }
 
-// Data entry example:
+// Event body example:
 {
 	"user_id": "d5b7ce",
 	"seats": [
@@ -65,19 +65,19 @@
 
 // EVENT: TimerExpired
 
-// Data entry schema:
+// Event body schema:
 {
 	"user_id": "string"
 }
 
-// Data entry example:
+// Event body example:
 {
 	"user_id": "d5b7ce"
 }
 
 // EVENT: CardCreated
 
-// Data entry schema:
+// Event body schema:
 {
 	"user_id": "user_id",
 	"card_number": "string",
@@ -86,7 +86,7 @@
 	"cvv": "string"
 }
 
-// Data entry example:
+// Event body example:
 {
 	"user_id": "d5b7ce",
 	"card_number": "1234567890123456",
@@ -97,31 +97,31 @@
 
 // EVENT: CardAccepted
 
-// Data entry schema:
+// Event body schema:
 {
 	"user_id": "string"
 }
 
-// Data entry example:
+// Event body example:
 {
 	"user_id": "d5b7ce"
 }
 
 // EVENT: CardDenied
 
-// Data entry schema:
+// Event body schema:
 {
 	"user_id": "string"
 }
 
-// Data entry example:
+// Event body example:
 {
 	"user_id": "d5b7ce"
 }
 
 // EVENT: Order Confirmed
 
-// Data entry schema:
+// Event body schema:
 {
 	"user_id": "string",
 	"full_name": "string",
@@ -141,7 +141,7 @@
 	} | undefined
 }
 
-// Data entry example:
+// Event body example:
 {
 	"user_id": "d5b7ce",
 	"full_name": "Seth Franklin",
