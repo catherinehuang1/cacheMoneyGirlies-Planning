@@ -1,0 +1,180 @@
+
+// SERVICE: Create user
+
+	// TABLE: users
+
+		// Data entry schema:
+		{
+			"user_id": "string",
+			"full_name": "string",
+			"email_address": "string",
+			"confirmed": "boolean"
+		}
+
+		// Data entry example:
+		{
+			"user_id": "d5b7ce",
+			"full_name": "Seth Franklin",
+			"email_address": "sjfranklin@umass.edu",
+			"confirmed": "false"
+		}
+
+// Email user id
+
+	// This microservice will not have any databases
+
+// SERVICE: Confirm user
+
+	// TABLE: users
+
+		// Data entry schema:
+		{
+			"user_id": "string",
+			"full_name": "string",
+			"email": "string"
+		}
+
+		// Data entry example:
+		{
+			"user_id": "d5b7ce",
+			"full_name": "Seth Franklin",
+			"email": "sjfranklin@umass.edu"
+		}
+
+// SERVICE: Seats
+
+	// TABLE: seats
+
+		// Data entry schema:
+		{
+			"row": "number",
+			"column": "number",
+			"status": "open" | "processing" | "sold",
+			"user_id": "string" | undefined
+		}
+
+		// Data entry example:
+		{
+			"row": 5,
+			"column": 4,
+			"status": "processing",
+			"user_id": "d5b7ce"
+		}
+
+	// TABLE: valid_user_ids
+
+		// Data entry schema:
+		{
+			"user_id": "string"
+		}
+
+		// Data entry example:
+		{
+			"user_id": "d5b7ce"
+		}
+
+// SERVICE: Create card
+
+	// TABLE: cards
+
+		// Data entry schema:
+		{
+			"user_id": "user_id",
+			"card_number": "string",
+			"billing_address": "string",
+			"expiration_date": "string",
+			"cvv": "string"
+		}
+
+		// Data entry example:
+		{
+			"user_id": "d5b7ce",
+			"card_number": "1234567890123456",
+			"billing_address": "181 Presidents Drive, Amherst MA, 01003",
+			"expiration_date": "01/01",
+			"cvv": "123"
+		}
+
+	// TABLE: valid_user_ids
+
+		// Data entry schema:
+		{
+			"user_id": "string"
+		}
+
+		// Data entry example:
+		{
+			"user_id": "d5b7ce"
+		}
+
+// SERVICE: Confirm card
+
+	// This microservice will not have any databases
+
+// SERVICE: Timers
+
+	// TABLE: timers
+
+		// Data entry schema:
+		{
+			"user_id": "string",
+			"expiration_timestamp": "number"
+		}
+
+		// Data entry example:
+		{
+			"user_id": "d5b7ce",
+			"expiration_timestamp": 1665668954883
+		}
+
+// Confirm order
+
+	// TABLE: orders
+
+		// Data entry schema:
+		{
+			"user_id": "string",
+			"seats": [
+				{
+					"row": "number",
+					"column": "number",
+				},...
+			] | undefined,
+			"card_info": {
+				"card_number": "string",
+				"billing_address": "string",
+				"expiration_date": "string",
+				"cvv": "string"
+			} | undefined
+		}
+
+		// Data entry example:
+		{
+			"user_id": "d5b7ce",
+			"full_name": "Seth Franklin",
+			"email_address": "sjfranklin@umass.edu",
+			"seats": [
+				{
+					"row": 5,
+					"column": 3,
+				},
+				{
+					"row": 5,
+					"column": 4,
+				},
+				{
+					"row": 5,
+					"column": 5,
+				}
+			],
+			"card_info": {
+				"card_number": "1234567890123456",
+				"billing_address": "181 Presidents Drive, Amherst MA, 01003",
+				"expiration_date": "01/01",
+				"cvv": "123"
+			}
+		}
+
+// Email order
+
+	// This microservice will not have any databases
