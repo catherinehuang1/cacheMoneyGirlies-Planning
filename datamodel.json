@@ -19,7 +19,7 @@
 			"confirmed": "false"
 		}
 
-// Email user id
+// SERVICE: Email user id
 
 	// This microservice will not have any databases
 
@@ -127,7 +127,7 @@
 			"expiration_timestamp": 1665668954883
 		}
 
-// Confirm order
+// SERVICE: Confirm order
 
 	// TABLE: orders
 
@@ -179,6 +179,6 @@
 			}
 		}
 
-// Email order
+// SERVICE: Email order
 
 	// This microservice will not have any databases
