@@ -126,19 +126,19 @@
 	"user_id": "string",
 	"full_name": "string",
 	"email_address": "string",
-	"order_status": "accepted" | "denied" | "processing_card",
+	"order_status": "string",
 	"seats": [
 		{
 			"row": "number",
 			"column": "number",
 		},...
-	] | undefined,
+	],
 	"card_info": {
 		"card_number": "string",
 		"billing_address": "string",
 		"expiration_date": "string",
 		"cvv": "string"
-	} | undefined
+	}
 }
 
 // Event body example:
