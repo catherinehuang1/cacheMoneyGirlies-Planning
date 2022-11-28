@@ -21,7 +21,27 @@
 
 // SERVICE: Email user id
 
-	// This microservice will not have any databases
+	// TABLE: logs
+
+		// Data entry schema:
+		{
+			"timestamp": "number",
+			"event_data": {
+				"user_id": "string",
+				"full_name": "string",
+				"email_address": "string"
+			}
+		}
+
+		// Data entry example:
+		{
+			"timestamp": 1665668954883,
+			"event_data": {
+				"user_id": "d5b7ce",
+				"full_name": "Seth Franklin",
+				"email_address": "sjfranklin@umass.edu"
+			}
+		}
 
 // SERVICE: Confirm user
 
@@ -111,7 +131,35 @@
 
 // SERVICE: Confirm card
 
-	// This microservice will not have any databases
+	// TABLE: logs
+
+		// Data entry schema:
+		{
+			"timestamp": "number",
+			"confirm_status": "accepted" | "denied",
+			"event_data": {
+				"user_id": "user_id",
+				"card_number": "string",
+				"billing_address": "string",
+				"expiration_date": "string",
+				"cvv": "string"
+			}
+
+		}
+
+		// Data entry example:
+		{
+			"timestamp": 1665668954883,
+			"confirm_status": "accepted",
+			"event_data": {
+				"user_id": "d5b7ce",
+				"card_number": "1234567890123456",
+				"billing_address": "181 Presidents Drive, Amherst MA, 01003",
+				"expiration_date": "01/01",
+				"cvv": "123"
+			}
+
+		}
 
 // SERVICE: Timers
 
@@ -183,4 +231,58 @@
 
 // SERVICE: Email order
 
-	// This microservice will not have any databases
+	// TABLE: logs
+
+		// Data entry schema:
+		{
+			"timestamp": "number",
+			"event_data": {
+				"user_id": "string",
+				"full_name": "string",
+				"email_address": "string",
+				"order_status": "string",
+				"seats": [
+					{
+						"row": "number",
+						"column": "number",
+					},...
+				],
+				"card_info": {
+					"card_number": "string",
+					"billing_address": "string",
+					"expiration_date": "string",
+					"cvv": "string"
+				}
+			}
+		}
+
+		// Data entry example:
+		{
+			"timestamp": 1665668954883,
+			"event_data": {
+				"user_id": "d5b7ce",
+				"full_name": "Seth Franklin",
+				"email_address": "sjfranklin@umass.edu",
+				"order_status": "accepted",
+				"seats": [
+					{
+						"row": 5,
+						"column": 3,
+					},
+					{
+						"row": 5,
+						"column": 4,
+					},
+					{
+						"row": 5,
+						"column": 5,
+					}
+				],
+				"card_info": {
+					"card_number": "1234567890123456",
+					"billing_address": "181 Presidents Drive, Amherst MA, 01003",
+					"expiration_date": "01/01",
+					"cvv": "123"
+				}
+			}
+		}
